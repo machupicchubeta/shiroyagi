@@ -195,7 +195,7 @@ RSpec.describe Message, type: :model do
         it { is_expected.to eq([]) }
 
         it 'should not change read_at' do
-          expect{ subject }.to_not change{ message.reload.read_at }
+          expect { subject }.to_not change { message.reload.read_at }
         end
       end
 
@@ -205,7 +205,7 @@ RSpec.describe Message, type: :model do
         it { is_expected.to match_array(message) }
 
         it 'should record read_at' do
-          expect{ subject }.to change{ message.reload.read_at }.from(nil).to(be_an_instance_of(ActiveSupport::TimeWithZone))
+          expect { subject }.to change { message.reload.read_at }.from(nil).to(be_an_instance_of(ActiveSupport::TimeWithZone))
         end
       end
     end
@@ -218,11 +218,11 @@ RSpec.describe Message, type: :model do
         it { is_expected.to match_array(Message.all) }
 
         it 'should record message_1 read_at' do
-          expect{ subject }.to change{ message_1.reload.read_at }.from(nil).to(be_an_instance_of(ActiveSupport::TimeWithZone))
+          expect { subject }.to change { message_1.reload.read_at }.from(nil).to(be_an_instance_of(ActiveSupport::TimeWithZone))
         end
 
         it 'should record message_2 read_at' do
-          expect{ subject }.to change{ message_2.reload.read_at }.from(nil).to(be_an_instance_of(ActiveSupport::TimeWithZone))
+          expect { subject }.to change { message_2.reload.read_at }.from(nil).to(be_an_instance_of(ActiveSupport::TimeWithZone))
         end
       end
 
@@ -233,11 +233,11 @@ RSpec.describe Message, type: :model do
         it { is_expected.to match_array(message_1) }
 
         it 'should record message_1 read_at' do
-          expect{ subject }.to change{ message_1.reload.read_at }.from(nil).to(be_an_instance_of(ActiveSupport::TimeWithZone))
+          expect { subject }.to change { message_1.reload.read_at }.from(nil).to(be_an_instance_of(ActiveSupport::TimeWithZone))
         end
 
         it 'should not change message_2 read_at' do
-          expect{ subject }.to_not change{ message_2.reload.read_at }
+          expect { subject }.to_not change { message_2.reload.read_at }
         end
       end
 
@@ -248,11 +248,11 @@ RSpec.describe Message, type: :model do
         it { is_expected.to match_array(Message.none) }
 
         it 'should not change message_1 read_at' do
-          expect{ subject }.to_not change{ message_1.reload.read_at }
+          expect { subject }.to_not change { message_1.reload.read_at }
         end
 
         it 'should not change message_2 read_at' do
-          expect{ subject }.to_not change{ message_2.reload.read_at }
+          expect { subject }.to_not change { message_2.reload.read_at }
         end
       end
     end
@@ -272,7 +272,7 @@ RSpec.describe Message, type: :model do
         it { is_expected.to eq([]) }
 
         it 'should not change read_at' do
-          expect{ subject }.to_not change{ message.reload.read_at }
+          expect { subject }.to_not change { message.reload.read_at }
         end
       end
 
@@ -282,7 +282,7 @@ RSpec.describe Message, type: :model do
         it { is_expected.to match_array(message) }
 
         it 'should clear read_at' do
-          expect{ subject }.to change{ message.reload.read_at }.from(ActiveSupport::TimeWithZone).to(nil)
+          expect { subject }.to change { message.reload.read_at }.from(ActiveSupport::TimeWithZone).to(nil)
         end
       end
     end
@@ -295,11 +295,11 @@ RSpec.describe Message, type: :model do
         it { is_expected.to match_array(Message.all) }
 
         it 'should clear message_1 read_at' do
-          expect{ subject }.to change{ message_1.reload.read_at }.from(be_an_instance_of(ActiveSupport::TimeWithZone)).to(nil)
+          expect { subject }.to change { message_1.reload.read_at }.from(be_an_instance_of(ActiveSupport::TimeWithZone)).to(nil)
         end
 
         it 'should clear message_2 read_at' do
-          expect{ subject }.to change{ message_2.reload.read_at }.from(be_an_instance_of(ActiveSupport::TimeWithZone)).to(nil)
+          expect { subject }.to change { message_2.reload.read_at }.from(be_an_instance_of(ActiveSupport::TimeWithZone)).to(nil)
         end
       end
 
@@ -310,11 +310,11 @@ RSpec.describe Message, type: :model do
         it { is_expected.to match_array(message_1) }
 
         it 'should clear message_1 read_at' do
-          expect{ subject }.to change{ message_1.reload.read_at }.from(be_an_instance_of(ActiveSupport::TimeWithZone)).to(nil)
+          expect { subject }.to change { message_1.reload.read_at }.from(be_an_instance_of(ActiveSupport::TimeWithZone)).to(nil)
         end
 
         it 'should not change message_2 read_at' do
-          expect{ subject }.to_not change{ message_2.reload.read_at }
+          expect { subject }.to_not change { message_2.reload.read_at }
         end
       end
 
@@ -325,11 +325,11 @@ RSpec.describe Message, type: :model do
         it { is_expected.to match_array(Message.none) }
 
         it 'should not change message_1 read_at' do
-          expect{ subject }.to_not change{ message_1.reload.read_at }
+          expect { subject }.to_not change { message_1.reload.read_at }
         end
 
         it 'should not change message_2 read_at' do
-          expect{ subject }.to_not change{ message_2.reload.read_at }
+          expect { subject }.to_not change { message_2.reload.read_at }
         end
       end
     end
@@ -344,7 +344,7 @@ RSpec.describe Message, type: :model do
       it { is_expected.to be_truthy }
 
       it 'should record read_at' do
-        expect{ subject }.to change{ message.read_at }.from(nil).to(be_an_instance_of(ActiveSupport::TimeWithZone))
+        expect { subject }.to change { message.read_at }.from(nil).to(be_an_instance_of(ActiveSupport::TimeWithZone))
       end
     end
 
@@ -354,7 +354,7 @@ RSpec.describe Message, type: :model do
       it { is_expected.to be_nil }
 
       it 'should not change read_at' do
-        expect{ subject }.to_not change{ message.read_at }
+        expect { subject }.to_not change { message.read_at }
       end
     end
   end
@@ -368,7 +368,7 @@ RSpec.describe Message, type: :model do
       it { is_expected.to be_truthy }
 
       it 'should clear read_at' do
-        expect{ subject }.to change{ message.read_at }.from(be_an_instance_of(ActiveSupport::TimeWithZone)).to(nil)
+        expect { subject }.to change { message.read_at }.from(be_an_instance_of(ActiveSupport::TimeWithZone)).to(nil)
       end
     end
 
@@ -378,7 +378,7 @@ RSpec.describe Message, type: :model do
       it { is_expected.to be_nil }
 
       it 'should not change read_at' do
-        expect{ subject }.to_not change{ message.read_at }
+        expect { subject }.to_not change { message.read_at }
       end
     end
   end
