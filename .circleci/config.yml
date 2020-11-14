@@ -45,6 +45,7 @@ commands:
           name: Run tests
           command: |
             bin/rspec
+            bundle exec rubocop
 
 jobs:
   run_tests_on_ruby_2_7:
